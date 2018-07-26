@@ -1,0 +1,33 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.jumbotron{
+  text-align: center;
+  background-color:#13191f;
+  color: inherit;
+  background-image: url(../images/3819.jpg);
+  background-size: 100% 150%;
+}
+
+.panel-body h1{
+  text-align: center;
+}
+
+.panel-body p {
+  text-align: left; 
+  font-size: 18px;
+}
+
+.dresscode3{
+  margin-left: 10%;
+}
+
+.bond{
+  margin-left: 10%;
+}
