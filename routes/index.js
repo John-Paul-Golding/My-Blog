@@ -74,7 +74,40 @@ router.get('/delete/:id', function(req,res,next){
   });
 });
 
-/* GET Create post. */
-router.get('/edit', function(req, res, next) {
-  res.render('edit');
+/* GET EDIT post. */
+router.get('/edit/:id', function(req, res, next) {
+  var id = req.params.id;
+  request({
+    url: 'http://localhost:8000/posts/' +id,
+    method: "GET",
+    json: true
+  }, function (error, response, body) {
+    console.log(body.author)
+    res.render('edit', { post:body });
+  });
+
+
+
+
+});
+// Get edit
+
+router.post('/edit/:id', function(req, res, next) {
+
+
+  request({
+    url: 'http://localhost:8000/posts/'+ req.params.id,
+    method:"PATCH",
+
+    form: {
+      "title" : req.body.title,
+      "author" : req.body.author,
+      "datetime" : req.body.datetime,
+      "image":req.body.image,
+      "content" : req.body.content,
+    }
+
+  },function (error, response, body) {
+    res.redirect('/');
+  });
 });
